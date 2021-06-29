@@ -1,0 +1,10 @@
+version = 0.1
+[default]
+[default.deploy]
+[default.deploy.parameters]
+stack_name = "log-processing"
+s3_bucket = "modamod-test-bucket"
+s3_prefix = "log-processing"
+region = "us-east-1"
+capabilities = "CAPABILITY_IAM"
+parameter_overrides = "FilterPattern=\"[remote_addr,,remote_user,time_local,request,status,body_bytes_sent,http_referer,http_user_agent]\" LogGroupName=\"/ecs/sample-website-log-group\""
